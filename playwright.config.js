@@ -8,9 +8,10 @@ module.exports = defineConfig({
   retries: process.env.CI ? 2 : 0,
   reporter: 'html',
   use: {
-    /* Mengumpulkan arsip Trace Viewer hanya pada kegagalan pertama (hemat penyimpanan) */
     trace: 'on-first-retry',
     headless: true,
+    screenshot: 'on',
+    video: 'retain-on-failure'
   },
   projects: [
     {
